@@ -220,6 +220,7 @@ img {
   position: relative;
   margin-top: 30px;
 }
+
 .product {
   padding-left: 10px;
   width: 400px;
@@ -232,6 +233,7 @@ img {
 }
 
 .card {
+  position: relative;
   height: 400px;
   background-color: rgba(50, 85, 123, 0.3);
   margin: auto;
@@ -239,7 +241,12 @@ img {
   border: none;
   border-radius: 17px;
   margin-bottom: 30px;
-  position: relative;
+  transition: transform 0.3s ease;
+
+}
+
+.card:hover {
+  transform: scale(1.1);
 }
 
 .card img {
@@ -248,13 +255,34 @@ img {
   border: none;
 }
 
+
 .card span {
-  content: '';
   position: absolute;
+  bottom: 20px; /* Adjust as needed */
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 15px;
-  font-size: 25px;
-  white-space: nowrap;
+  font-size: 18px;
+  white-space: nowrap; /* Prevent text wrapping */
   letter-spacing: 1.2px;
+}
+
+.card span::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #f4f9ff;
+  /* Adjust underline color as needed */
+  bottom: -5px;
+  /* Position under the text */
+  left: 0;
+  transform: scaleX(0);
+  /* Initially hide the underline */
+  transition: transform 0.3s ease;
+  /* Transition for the underline */
+}
+
+.card:hover span::after {
+  transform: scaleX(1);
+  /* Show the underline on hover */
 }
