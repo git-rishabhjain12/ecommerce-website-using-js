@@ -207,11 +207,65 @@ nav .top a {
 
 /* -------------------------Section 1 Image Carousel Start----------------------------- */
 
+.main {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
 
-#image-carousel {
-  margin-top: 10px;
-  border: 1px solid blue;
-  height: 100px;
+.imageSlider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.imageSlider .slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.imageSlider img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+.image-data {
+  position: absolute;
+  bottom: 20px; /* Adjust vertical position as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  padding: 10px 20px; /* Adjust padding as needed */
+  text-align: center;
+}
+
+.image-data h2.text {
+  font-size: 24px; /* Adjust font size as needed */
+  font-weight: 600; /* Adjust font weight as needed */
+  color: white; /* Ensure text is visible on the background */
+  margin: 0; /* Remove default margin */
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.controls button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 0 2rem;
 }
 
 /* -------------------------Section 1 Image Carousel End----------------------------- */

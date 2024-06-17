@@ -45,4 +45,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
   searchIcon.addEventListener("click", showSearchInput);
   closeSearchIcon.addEventListener("click", hideSearchInput);
+
+  // --------------------------------------------------------------------
+
+  const slider = document.querySelector(".imageSlider");
+  const slides = document.querySelectorAll(".slide");
+  const prevButton = document.getElementById("prev");
+  const nextButton = document.getElementById("next");
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+
+  function showSlide(index) {
+    if (index >= totalSlides) {
+      currentIndex = 0;
+    } else if (index < 0) {
+      currentIndex = totalSlides - 1;
+    } else {
+      currentIndex = index;
+    }
+    slider.style.transform = `translateX(${-currentIndex * 100}%)`;
+  }
+
+  nextButton.addEventListener("click", () => {
+    showSlide(currentIndex + 1);
+  });
+
+  prevButton.addEventListener("click", () => {
+    showSlide(currentIndex - 1);
+  });
+
+  setInterval(() => {
+    showSlide(currentIndex + 1);
+  }, 3000);
 });
