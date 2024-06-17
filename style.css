@@ -14,6 +14,33 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+#wrapper {
+  height: 100%;
+}
+
+.reviews {
+  position: fixed;
+  top: 50%;
+  right: -40px;
+  transform: translateY(-50%) rotate(90deg);
+  background-color: #000;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 100;
+  border-radius: 0px 0px 15px 15px;
+}
+
+
+.reviews a {
+  text-decoration: none;
+  color: #fff;
+
+}
+
+
 /* --------------------------------------------------------------------------------- */
 #offerSlider {
   position: relative;
@@ -39,3 +66,152 @@
 }
 
 /* -------------------------Offer Slider Ends----------------------------- */
+/* -------------------------Nav Bar Starts----------------------------- */
+
+header {
+  border-bottom: 1px solid yellow;
+}
+
+
+nav {
+  padding: 1.3rem;
+  position: relative;
+}
+
+nav .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+#searchIcon,
+#user,
+#cart {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#searchIcon {
+  padding-left: 4rem;
+}
+
+nav .top a {
+  text-decoration: none;
+  color: #C97C5D;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px #C89F9C;
+}
+
+.login-cart {
+  padding-right: 4rem;
+  gap: 2rem;
+}
+
+.login-cart #user {
+  padding-right: 1rem;
+}
+
+/* **************************Top div ends************************** */
+/* **************************Bottom div start************************** */
+.bottom {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 3rem;
+  gap: 4rem;
+}
+
+.bottom a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgba(9, 9, 9, 0.685);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+
+}
+
+.bottom a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  bottom: -20px;
+  left: 0;
+  transition: background-color 0.3s ease;
+}
+
+.bottom a:hover {
+  color: #d47752;
+}
+
+
+.bottom a:hover::after {
+  background-color: #000;
+}
+
+/* **************************Bottom div ends************************** */
+.togather {
+  border: 2px solid rgba(29, 29, 31, 0.327);
+  border-radius: 40px;
+}
+
+
+.searchInput {
+  display: flex;
+  padding: 3rem 2rem;
+  background-color: #fff;
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.searchInput input {
+  width: 30vw;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  background: #fff;
+  border-radius: 20px;
+  color: #000;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.searchInputMagnifying {
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  color: #555;
+  padding: 0 1rem;
+}
+
+.searchInput .closeSearchIcon {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  color: #000;
+  cursor: pointer;
+}
+
+#searchInput {
+  display: none;
+}
+
+/* -------------------------Nav Bar Ends----------------------------- */
+
+/* -------------------------Section 1 Image Carousel Start----------------------------- */
+
+
+#image-carousel {
+  margin-top: 10px;
+  border: 1px solid blue;
+  height: 100px;
+}
+
+/* -------------------------Section 1 Image Carousel End----------------------------- */

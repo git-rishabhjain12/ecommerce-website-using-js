@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-
   // Code for Top offerSlider
 
   const track = document.querySelector(".track");
@@ -25,7 +23,26 @@ document.addEventListener("DOMContentLoaded", function () {
   // Start the animation
   animateMarquee();
 
-// --------------------------------------------------------------------
+  // --------------------------------------------------------------------
+  const searchInput = document.querySelector("#searchInput");
+  const searchIcon = document.querySelector("#searchIcon");
+  const closeSearchIcon = document.querySelector("#closeSearchIcon");
 
+  function showSearchInput() {
+    if (
+      searchInput.style.display === "none" ||
+      searchInput.style.display === ""
+    ) {
+      searchInput.style.display = "flex"; // To show the element
+    } else {
+      searchInput.style.display = "none"; // To hide the element
+    }
+  }
 
+  function hideSearchInput() {
+    searchInput.style.display = "none"; // To hide the element
+  }
+
+  searchIcon.addEventListener("click", showSearchInput);
+  closeSearchIcon.addEventListener("click", hideSearchInput);
 });
