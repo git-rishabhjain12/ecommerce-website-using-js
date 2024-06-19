@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 :root {
-  --main-font: "Pacifico", cursive;
-  --font-weight: 400;
+  --main-font: "Poppins", sans-serif;
+  --font-weight-bold: 700;
+  --font-weight-regular: 400;
+  --font-weight-light: 300;
   --primary-background: #EED7C5;
   --secondary-backgroun: #EEE2DF;
   --primary-text-color: #000;
@@ -13,6 +15,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--main-font);
 }
 
 #wrapper {
@@ -68,9 +71,9 @@
 /* -------------------------Offer Slider Ends----------------------------- */
 /* -------------------------Nav Bar Starts----------------------------- */
 
-header {
+/* header {
   border-bottom: 1px solid yellow;
-}
+} */
 
 
 nav {
@@ -140,8 +143,8 @@ nav .top a {
   height: 2px;
   background-color: transparent;
   bottom: -20px;
-  left: 0;
-  transition: background-color 0.3s ease;
+  left: -100%;
+  transition: all 0.3s ease;
 }
 
 .bottom a:hover {
@@ -151,6 +154,7 @@ nav .top a {
 
 .bottom a:hover::after {
   background-color: #000;
+  left: 0;
 }
 
 /* **************************Bottom div ends************************** */
@@ -208,7 +212,7 @@ nav .top a {
 /* -------------------------Section 1 Image Carousel Start----------------------------- */
 
 .main {
-  height: 100vh;
+  /* height: 100vh; */
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -234,19 +238,19 @@ nav .top a {
 
 .image-data {
   position: absolute;
-  bottom: 20px; /* Adjust vertical position as needed */
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
   text-align: center;
 }
 
 .image-data h2.text {
-  font-size: 24px; /* Adjust font size as needed */
-  font-weight: 600; /* Adjust font weight as needed */
-  color: white; /* Ensure text is visible on the background */
-  margin: 0; /* Remove default margin */
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
 }
 
 .controls {
@@ -269,3 +273,94 @@ nav .top a {
 }
 
 /* -------------------------Section 1 Image Carousel End----------------------------- */
+
+
+/* -------------------------Section 2 Shop by Category Starts----------------------------- */
+
+.shopByCategory {
+  width: 100%;
+  background-color: var(--primary-background);
+  /* position: relative; */
+
+}
+
+.shopByCategory h1 {
+  font-size: 3rem;
+  font-weight: var(--font-weight-bold);
+  margin: 2rem 0 0 2rem;
+  position: relative;
+  color: #000;
+  display: inline-block;
+}
+
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  margin-top: 4rem;
+  position: relative;
+}
+
+.category {
+  margin: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 400px;
+  height: 100%;
+  padding-top: 1rem;
+  background-color: #d7888868;
+  width: 400px;
+  height: 100%;
+}
+
+.category:hover img {
+  transform: scale(1.03);
+}
+
+
+
+.category a {
+  overflow: hidden;
+  text-decoration: none;
+  display: inline;
+  align-items: center;
+  border-radius: 96px;
+  height: 100%;
+  width: 100%;
+}
+
+.category img {
+  width: 100%;
+  margin: 0 auto;
+  height: 400px;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 20px;
+}
+
+.category p {
+  font-size: 25px;
+  font-weight: var(--font-weight-light);
+  padding-left: 2rem;
+  margin: 1rem 0;
+  text-transform: uppercase;
+  transition: all .3s;
+  position: relative;
+}
+
+.category:hover p {
+  color: #ffffff;
+  text-shadow: 4px 0px 3px #000;
+}
+
+.category p span i {
+  color: #000;
+  transition: all .3s;
+}
+
+.category:hover p span i {
+  transform: scaleX(1.1);
+}
+
+/* -------------------------Section 2 Shop by Category Ends----------------------------- */

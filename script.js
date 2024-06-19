@@ -77,4 +77,41 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(() => {
     showSlide(currentIndex + 1);
   }, 3000);
+
+  // --------------------------------------------------------------------
+  const categoriesContainer = document.querySelector("#categoriesContainer");
+
+  categoriesContainer.innerHTML = "";
+
+  let API = "https://fakestoreapi.com/products";
+
+  (async () => {
+    const response = await fetch(API);
+    const data = await response.json();
+    console.log(data);
+
+    // Extract unique categories
+    const uniqueCategories = [
+      ...new Set(data.map((product) => product.category)),
+    ];
+    console.log(uniqueCategories);
+
+    uniqueCategories.forEach((category) => {
+      const categoryDiv = document.createElement("div");
+      categoryDiv.classList.add("category");
+
+      const productWithCategory = data.find(
+        (product) => product.category === category
+      );
+
+      if (productWithCategory) {
+        categoryDiv.innerHTML = `
+               <a href="#"><img src="${productWithCategory.image}" alt=""></a>
+               <p>${productWithCategory.category} <span><i class="fa-solid fa-arrow-right-long"></i></span></p>
+       `;
+
+        categoriesContainer.appendChild(categoryDiv);
+      }
+    });
+  })();
 });
