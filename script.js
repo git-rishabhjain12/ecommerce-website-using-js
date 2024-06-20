@@ -149,5 +149,48 @@ document.addEventListener("DOMContentLoaded", function () {
   newArrivals();
   // --------------------------------------------------------------------
 
+  const carousel = document.querySelector(".carousel");
+  const carouselWrapper = document.querySelector(".carousel-wrapper");
+
+  // Variable to keep track of dragging.
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  carouselWrapper.addEventListener("mousedown", (e) => {
+    isDown = true;
+    startX = e.pageX - carouselWrapper.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+  });
+
+  carouselWrapper.addEventListener("mouseleave", () => {
+    isDown = false;
+  });
+
+  carouselWrapper.addEventListener("mouseup", () => {
+    isDown = false;
+  });
+
+  // Event Listner for mouse move
+
+  carouselWrapper.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - carouselWrapper.offsetLeft;
+    carousel.scrollLeft = scrollLeft + startX - x;
+  });
+
+  const leftButton = document.querySelector("#left");
+  const rightButton = document.querySelector("#right");
+
+  leftButton.addEventListener("click", () => {
+    carousel.scrollLeft -= 500;
+    console.log("rishabh");
+  });
+
+  rightButton.addEventListener("click", () => {
+    carousel.scrollLeft += 500;
+  });
   // --------------------------------------------------------------------
 });

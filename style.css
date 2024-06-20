@@ -40,7 +40,6 @@
 .reviews a {
   text-decoration: none;
   color: #fff;
-
 }
 
 
@@ -559,3 +558,123 @@ nav .top a {
 }
 
 /* -------------------------Section 3 Best and Trending Product End----------------------------- */
+
+
+/* -------------------------Section 4 Dragging Carousel Start----------------------------- */
+
+
+
+.draggingCarousel {
+  height: 100%;
+  background-color: var(--primary-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.carousel-wrapper {
+  padding: 2rem 0;
+  max-width: 1000px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100%/3) - 15px);
+  gap: 20px;
+  column-gap: 20px;
+  overflow-x: hidden;
+  cursor: grab;
+}
+
+.card {
+  /* flex: 0 0 auto; */
+  width: calc((100%/3)-20px);
+  list-style: none;
+  background-color: #ffffff;
+  border-radius: 20px;
+  height: 350px;
+  padding: 1rem;
+}
+
+.carousel .card .image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  user-select: none;
+
+}
+
+.carousel .card .image img {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  margin: 1rem auto;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.carousel .card .image::before {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-color: purple;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card h2 {
+  text-align: center;
+  padding: 1rem 0;
+  user-select: none;
+}
+
+.card p {
+  text-align: center;
+  user-select: none;
+}
+
+#left,
+#right {
+  content: '';
+  position: absolute;
+  background-color: gray;
+  border-radius: 50%;
+  padding: 0.8rem 1.2rem;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+
+#left {
+  left: 12%;
+}
+
+#right {
+  right: 12%;
+}
+
+#left:hover,
+#right:hover {
+  transform: scale(1.1);
+}
+
+.stars {
+  font-size: 30px;
+  text-align: center;
+  color: goldenrod;
+  user-select: none;
+}
+
+/* -------------------------Section 4 Dragging Carousel End----------------------------- */
