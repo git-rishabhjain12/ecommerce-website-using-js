@@ -88,13 +88,13 @@ document.addEventListener("DOMContentLoaded", function () {
   (async () => {
     const response = await fetch(API);
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
 
     // Extract unique categories
     const uniqueCategories = [
       ...new Set(data.map((product) => product.category)),
     ];
-    console.log(uniqueCategories);
+    // console.log(uniqueCategories);
 
     uniqueCategories.forEach((category) => {
       const categoryDiv = document.createElement("div");
@@ -114,4 +114,40 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   })();
+
+  // --------------------------------------------------------------------
+  const productsContainer = document.querySelector("#productsContainer");
+
+  productsContainer.innerHTML = "";
+
+  const newArrivals = async () => {
+    const response = await fetch(API);
+    const data = await response.json();
+    console.log(data);
+
+    productsContainer.innerHTML = "";
+
+    const limitedData = data.slice(0, 8);
+
+    limitedData.forEach((newArrival) => {
+      const productDiv = document.createElement("div");
+      productDiv.classList.add("product");
+
+      productDiv.innerHTML = `
+      <a href="#"><img src="${newArrival.image}" alt=""></a>
+      <div class="productDetails">
+      <p class="title">${newArrival.title}</p>
+      <p class="price">$ ${newArrival.price}</p>
+      </div>
+
+    `;
+
+      productsContainer.appendChild(productDiv);
+    });
+  };
+
+  newArrivals();
+  // --------------------------------------------------------------------
+
+  // --------------------------------------------------------------------
 });
