@@ -74,9 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
     showSlide(currentIndex - 1);
   });
 
-  setInterval(() => {
-    showSlide(currentIndex + 1);
-  }, 3000);
+  // setInterval(() => {
+  //   showSlide(currentIndex + 1);
+  // }, 6000);
 
   // --------------------------------------------------------------------
   const categoriesContainer = document.querySelector("#categoriesContainer");

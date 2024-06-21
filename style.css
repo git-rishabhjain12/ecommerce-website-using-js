@@ -20,6 +20,8 @@
 
 #wrapper {
   height: 100%;
+  width: 100%;
+  position: relative;
 }
 
 .reviews {
@@ -574,6 +576,7 @@ nav .top a {
   position: relative;
   width: 100%;
   overflow-x: hidden;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.53);
 }
 
 .carousel-wrapper {
@@ -678,3 +681,141 @@ nav .top a {
 }
 
 /* -------------------------Section 4 Dragging Carousel End----------------------------- */
+
+
+
+/* -------------------------Footer Start----------------------------- */
+
+.footer {
+  height: 100%;
+  padding: 2rem;
+  background-color: var(--primary-background);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.53);
+}
+
+.footerComponents {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+
+}
+
+
+.policies h2,
+.explore h2 {
+  padding-bottom: 1rem;
+  font-weight: 400;
+}
+
+.policies ul,
+.explore ul {
+  list-style: none;
+}
+
+.policies ul a,
+.explore ul a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.647);
+  line-height: 2;
+}
+
+.contactHeading {
+  line-height: 3;
+  content: '';
+  position: absolute;
+  top: -25px;
+}
+
+.contact {
+  line-height: 3;
+}
+
+.contactHeading h2 {
+  font-weight: 400;
+}
+
+.contact p {
+  color: rgba(0, 0, 0, 0.647);
+}
+
+.contact span {
+  text-decoration: underline;
+  line-height: 2;
+}
+
+.copyright {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* -------------------------Footer End----------------------------- */
+
+/* MEDIA QUERIES */
+
+@media (max-width:600px) {
+  .bottom {
+    display: none;
+  }
+
+  .imageSlider {
+    width: 100vw;
+    height: 500px;
+  }
+
+  .slide img {
+    height: 100%;
+    width: 100vw;
+  }
+
+  .categories {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .category {
+    margin: auto;
+    padding: 1rem;
+  }
+
+  .category img {
+    padding: 1rem 0;
+    height: 300px;
+  }
+
+  .category p {
+    margin: 0;
+  }
+
+  .products {
+    padding: 50px 10px;
+    font-size: 20px;
+  }
+
+  .bestProductImg img {
+    margin: 0;
+    height: 500px;
+    width: 100%;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    /* left: -10%; */
+    width: 80%;
+    padding: 10px 20px;
+    bottom: -100px;
+  }
+
+  .details h1 {
+    font-size: 30px;
+  }
+
+  .details p {
+    padding: 0;
+  }
+}
